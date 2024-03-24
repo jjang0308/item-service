@@ -31,11 +31,12 @@
             </tr>
             </thead>
             <tbody>
+<!--            루프 돌리는 거 th:each-->
             <tr th:each="item : ${items}">
                 <td><a href="item.html"th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">1</a></td>
-                <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.itemName}">상품명</a></td>
+                <td><a href="item.html" th:href="@{|/basic/items/${item.id}|}" th:text="${item.itemName}">상품명</a></td>
                 <td th:text="${item.price}">10000</td>
-                <td th:text="${item.quantity}">100</td>
+                <td th:text="${item.quantity}">10</td>
             </tr>
             </tbody>
         </table>
